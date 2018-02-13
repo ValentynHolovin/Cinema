@@ -5,6 +5,7 @@ import ua.vholovin.server.service.api.Service;
 
 import java.io.Serializable;
 
+@org.springframework.stereotype.Service
 public abstract class SuperService<T, ID extends Serializable> implements Service<T, ID> {
     @Override
     public <S extends T> S save(S var1) {
