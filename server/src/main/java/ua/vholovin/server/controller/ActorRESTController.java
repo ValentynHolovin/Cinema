@@ -11,12 +11,6 @@ public class ActorRESTController {
     private ActorService actorService;
 
     @CrossOrigin(value = "*")
-    @RequestMapping(value = "/")
-    public String getIndex() {
-        return "index.html";
-    }
-
-    @CrossOrigin(value = "*")
     @RequestMapping(value = "/actors/{id}")
     public Actor findOne(@PathVariable Integer id) {
         return actorService.findOne(id);
