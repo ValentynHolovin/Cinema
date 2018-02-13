@@ -3,14 +3,16 @@ package ua.vholovin.server.domain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 
 import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.io.Serializable;
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
+import java.util.Date;
+
 
 @Data
 @NoArgsConstructor
@@ -30,11 +32,10 @@ public class Actor implements Serializable {
     private String lastName;
 
     @Column(name = "CreatedDate")
-    //@Generated(value = GenerationTime.INSERT)
-    //@CreationTimestamp
-    private LocalDateTime createdDate;
+    @CreationTimestamp
+    private Date createdDate;
 
     @Column(name = "ModifiedDate")
-    @Generated(value = GenerationTime.ALWAYS)
-    private Timestamp modifiedDate;
+    @UpdateTimestamp
+    private Date modifiedDate;
 }
