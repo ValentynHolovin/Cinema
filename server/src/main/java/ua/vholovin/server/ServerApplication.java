@@ -2,10 +2,11 @@ package ua.vholovin.server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import ua.vholovin.server.domain.Actor;
-import ua.vholovin.server.domain.DaoImpl;
 
 @SpringBootApplication
+@EnableJpaRepositories
 public class ServerApplication {
 
 	public static void main(String[] args) {
@@ -14,9 +15,6 @@ public class ServerApplication {
 		Actor actor = new Actor();
 		actor.setFirstName("Valik");
 		actor.setLastName("Holovin");
-
-		DaoImpl dao = DaoImpl.getInstance();
-		dao.save(actor);
 
 		System.out.println(actor.getActorID() + " " + actor.getCreatedDate() + " " + actor.getModifiedDate());
 	}
