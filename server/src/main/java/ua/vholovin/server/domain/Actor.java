@@ -9,10 +9,8 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 
 import javax.persistence.*;
-import javax.persistence.Entity;
-import javax.persistence.Table;
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 
 
 @Data

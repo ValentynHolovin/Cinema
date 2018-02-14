@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
@@ -11,8 +12,14 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
+@Table(name = "movie")
 public class Movie implements Serializable {
+    @Id()
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "MovieID")
     private Integer movieID;
+
     private String title;
     private String description;
     private Integer age;
