@@ -24,7 +24,7 @@ public class Poster implements Serializable {
     private Integer posterID;
 
     @ManyToOne
-    @JoinColumn(name = "MovieID", referencedColumnName = "MovieID")
+    @JoinColumn(name = "MovieID", referencedColumnName = "MovieID", nullable = false)
     private Movie movie;
 
     @Column(name = "PosterData", nullable = false)

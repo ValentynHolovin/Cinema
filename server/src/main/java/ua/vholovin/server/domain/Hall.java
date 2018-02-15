@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.Type;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
@@ -26,10 +27,12 @@ public class Hall implements Serializable {
     @Column(name = "HallName", nullable = false, length = 15, unique = true)
     private String hallName;
 
-    @Column(name = "Width", nullable = false, length = 2)
+    @Column(name = "Width", nullable = false, length = 2, columnDefinition = "TINYINT(2)")
+    @Type(type = "byte")
     private Integer width;
 
-    @Column(name = "Height", nullable = false, length = 2)
+    @Column(name = "Height", nullable = false, length = 2, columnDefinition = "TINYINT(2)")
+    @Type(type = "byte")
     private Integer height;
 
     @OneToMany(mappedBy = "hall", cascade = CascadeType.ALL, orphanRemoval = true)

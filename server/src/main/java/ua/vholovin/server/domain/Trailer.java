@@ -24,7 +24,7 @@ public class Trailer implements Serializable {
     private Integer trailerID;
 
     @ManyToOne
-    @JoinColumn(name = "MovieID", referencedColumnName = "MovieID")
+    @JoinColumn(name = "MovieID", referencedColumnName = "MovieID", nullable = false)
     private Movie movie;
 
     @Column(name = "TrailerURL", nullable = false, length = 2083, unique = true)

@@ -24,11 +24,11 @@ public class Seance implements Serializable {
     private Integer seanceID;
 
     @ManyToOne(targetEntity = Movie.class)
-    @JoinColumn(name = "MovieID", referencedColumnName = "MovieID")
+    @JoinColumn(name = "MovieID", referencedColumnName = "MovieID", nullable = false)
     private Movie movie;
 
     @ManyToOne(targetEntity = Hall.class)
-    @JoinColumn(name = "HallID", referencedColumnName = "HallID")
+    @JoinColumn(name = "HallID", referencedColumnName = "HallID", nullable = false)
     private Hall hall;
 
     @Column(name = "Cost", nullable = false)

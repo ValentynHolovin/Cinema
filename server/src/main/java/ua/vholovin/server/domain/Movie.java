@@ -11,15 +11,13 @@ import org.hibernate.annotations.UpdateTimestamp;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 import java.util.Set;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "movie", uniqueConstraints = {@UniqueConstraint(columnNames = {"Title"}),
-                                            @UniqueConstraint(columnNames = {"Description"})})
+@Table(name = "movie", uniqueConstraints = {@UniqueConstraint(columnNames = {"Title"})})
 public class Movie implements Serializable {
     @Id()
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -34,11 +32,12 @@ public class Movie implements Serializable {
     @Lob
     private String description;
 
-    @Column(name = "Age", nullable = false, length = 2)
+    @Column(name = "Age", nullable = false, length = 2, columnDefinition = "TINYINT(2)")
     @Type(type = "byte")
     private Integer age;
 
-    @Column(name = "Duration", nullable = false, length = 3)
+    @Column(name = "Duration", nullable = false, length = 3, columnDefinition = "SMALLINT(3)")
+    @Type(type = "short")
     private Integer duration;
 
     @Column(name = "ReleaseDate", nullable = false)

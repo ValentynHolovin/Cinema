@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.Type;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
@@ -23,13 +24,15 @@ public class Place implements Serializable {
     private Integer placeID;
 
     @ManyToOne
-    @JoinColumn(name = "HallID", referencedColumnName = "HallID")
+    @JoinColumn(name = "HallID", referencedColumnName = "HallID", nullable = false)
     private Hall hall;
 
-    @Column(name = "LineNumber", nullable = false, length = 2)
+    @Column(name = "LineNumber", nullable = false, length = 2, columnDefinition = "TINYINT(2)")
+    @Type(type = "byte")
     private Integer lineNumber;
 
-    @Column(name = "PlaceNumber", nullable = false, length = 2)
+    @Column(name = "PlaceNumber", nullable = false, length = 2, columnDefinition = "TINYINT(2)")
+    @Type(type = "byte")
     private Integer placeNumber;
 
     @Column(name = "IsAccessible", nullable = false)
