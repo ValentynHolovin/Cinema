@@ -13,6 +13,7 @@ target/
 .idea
 *.iws
 *.iml
+!server.iml
 *.ipr
 
 ### NetBeans ###
