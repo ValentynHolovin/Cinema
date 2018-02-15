@@ -5,9 +5,10 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 import ua.vholovin.server.domain.Poster;
 import ua.vholovin.server.repository.PosterRepository;
+import ua.vholovin.server.service.api.PosterService;
 
 @Service
-public class PosterServiceImpl extends SuperService<Poster, Integer> {
+public class PosterServiceImpl extends SuperService<Poster, Integer> implements PosterService {
     @Autowired
     private PosterRepository posterRepository;
 

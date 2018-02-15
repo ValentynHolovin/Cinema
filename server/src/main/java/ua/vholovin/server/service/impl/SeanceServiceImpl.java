@@ -5,9 +5,10 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 import ua.vholovin.server.domain.Seance;
 import ua.vholovin.server.repository.SeanceRepository;
+import ua.vholovin.server.service.api.SeanceService;
 
 @Service
-public class SeanceServiceImpl extends SuperService<Seance, Integer> {
+public class SeanceServiceImpl extends SuperService<Seance, Integer> implements SeanceService {
     @Autowired
     private SeanceRepository seanceRepository;
 
