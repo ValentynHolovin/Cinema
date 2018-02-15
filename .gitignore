@@ -2,3 +2,5 @@
 .idea
 *.iml
 !my_cinema.iml
+!client.iml
+
